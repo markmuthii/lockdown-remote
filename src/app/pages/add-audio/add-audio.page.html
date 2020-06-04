@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" (click)="closeModal()"></ion-icon>
+    </ion-buttons>
+    <ion-title>Add New Audio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <br />
+  <ion-input
+    [(ngModel)]="audioTitle"
+    placeholder="Audio Title eg Go to bed"
+  ></ion-input>
+  <br />
+  <ion-button
+    *ngIf="!isRecording && !isRecorded"
+    color="primary"
+    expand="block"
+    (click)="startRecording()"
+    >Start Recording</ion-button
+  >
+
+  <div *ngIf="isRecording || isRecorded" class="duration-container">
+    <div class="duration-circle"></div>
+    <p class="duration-time">{{ duration }}</p>
+  </div>
+  <br />
+  <div *ngIf="isRecorded" class="centered-buttons">
+    <ion-button color="primary" (click)="resetStuff()">Reset</ion-button>
+    <ion-button color="primary" (click)="saveAudio()">Save</ion-button>
+  </div>
+  <ion-button
+    class="stopRecordingBtn"
+    *ngIf="isRecording"
+    color="primary"
+    expand="block"
+    (click)="stopRecording()"
+    >Stop Recording</ion-button
+  >
+</ion-content>

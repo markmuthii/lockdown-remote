@@ -10,17 +10,49 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+ion-header {
+  ion-toolbar {
+    ion-buttons {
+      ion-icon {
+        font-size: 25px;
+      }
+
+      &[slot='start'] {
+        ion-icon {
+          margin-left: 1rem;
+        }
+      }
+
+      &[slot='end'] {
+        ion-icon {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+ion-content {
+  .centered-buttons {
+    display: flex;
+    align-items: center;
+    ion-button {
+      margin: auto;
+    }
+  }
+}
